@@ -1,0 +1,35 @@
+clusterDef:{}
+localSite:{}
+sites:{}
+site:{'name': 'DEFAULT', 'description': 'optional description'}
+clusterNodes:{}
+clusterNode:{'hostname': 'hostname-1'}
+ipAddress:{}
+user:{}
+password:{}
+remoteConfigAttr:{}
+attribute:{'name': '', 'value': ''}
+dseClusters:{}
+dseCluster:{'name': 'DSE-Cluster-Default-Site', 'description': 'optional description'}
+dataCenters:{}
+dataCenter:{'name': 'dc1', 'description': 'optional description'}
+racks:{}
+rack:{'name': 'rack1', 'description': 'optional description'}
+nodes:{}
+node:{'ref': 'hostname-1'}
+node:{'ref': 'hostname-2'}
+zkClusters:{}
+zkCluster:{'name': 'ZK-Cluster-Default-Site', 'description': 'optional description'}
+nodes:{}
+node:{'ref': 'hostname-1'}
+kafkaClusters:{}
+kafkaCluster:{'name': 'Site-1-Kafka-Cluster', 'description': 'optional description'}
+nodes:{}
+node:{'ref': 'hostname-1'}
+sparkClusters:{}
+sparkCluster:{'name': 'Site-1-Spark-Cluster', 'description': 'optional description'}
+masterNodes:{}
+node:{'ref': 'hostname'}
+workerNodes:{}
+node:{'ref': 'hostname-1'}
+node:{'ref': 'hostname-2'}

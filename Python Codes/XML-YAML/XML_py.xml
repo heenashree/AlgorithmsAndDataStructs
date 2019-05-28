@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clusterDef>
+
+    <!-- The name of the local site -->
+	<localSite>DEFAULT</localSite>
+
+    <!-- Detailed site configuration -->
+	<sites>
+        <!-- For each site, the following details are captured. Each site is identified by a unique site name.
+             for each site, a complete 'site' block needs to be configured -->
+		<site name="DEFAULT" description="optional description">
+
+            <!-- All cluster nodes that contributes for creation of SMART cluster in this site are defined here -->
+			<clusterNodes>
+                <!-- Definition of a cluster node. The 'clusterNode' block should be repeated for each host -->
+				<clusterNode hostname="hostname-1" >
+                    <!-- Main IP address used for communication with respect to SMART -->
+					<ipAddress>ip-address-1</ipAddress>
+                    <!-- OS user -->
+					<user></user>
+                    <!-- User password. Password should be encrypted. Please use $SMART_HOME/bin/encrypt_password.sh
+                         for generating an encrypted password before configuring here -->
+					<password></password>
+
+                    <!-- A set of remote configuration attributes as guided by JSCH.
+                         see: http://epaul.github.io/jsch-documentation/simple.javadoc/com/jcraft/jsch/JSch.html#setConfig(java.lang.String,%20java.lang.String)
+                         for all supported configurations -->
+                    <remoteConfigAttr>
+                        <attribute name="" value="" />
+                    </remoteConfigAttr>
+				</clusterNode>
+			</clusterNodes>
+
+            <!-- All DSE Cluster details captured here-->
+			<dseClusters>
+                <!-- DSE cluster configuration. Each DSE cluster is uniquely identified by its name. For each DSE
+                     cluster, a complete 'dseCluster' block needs to be configured -->
+				<dseCluster name="DSE-Cluster-Default-Site" description="optional description">
+                    <!-- A DSE cluster consists of a number of data centers, which are configured in this section -->
+					<dataCenters>
+                        <!-- Details of each DSE data center is captured here. Each data center is identified by a unique
+                             name. For each data center, a complete 'dataCenter' block needs to be configured -->
+						<dataCenter name="dc1" description="optional description">
+                            <!-- Each DSE data center consists of one or more rack, uniquely identified by the name -->
+							<racks>
+                                <!-- Rack details are specified here. For each rack, a complete 'rack' block needs
+                                     to be configured -->
+								<rack name="rack1" description="optional description">
+                                    <!-- All hosts available in a rack are mentioned here. Each host is identified
+                                         by a unique host name or ip address -->
+									<nodes>
+										<node ref="hostname-1" />
+                                        <node ref="hostname-2" />
+									</nodes>
+								</rack>
+							</racks>
+						</dataCenter>
+					</dataCenters>
+				</dseCluster>
+			</dseClusters>
+
+            <!-- Each site may have one ore more Zookeeper clusters, which are configured in this section -->
+			<zkClusters>
+                <!-- Each Zookeeper cluster is defined in this section. For each Zookeeper cluster, identified by
+                     a unique name, a complete 'zkCluster' block needs to be configured -->
+				<zkCluster name="ZK-Cluster-Default-Site" description="optional description">
+                    <!-- Defines all hosts where Zookeeper is installed that form the cluster -->
+					<nodes>
+						<node ref="hostname-1" />
+					</nodes>
+				</zkCluster>
+			</zkClusters>
+
+            <!-- Each site may have one ore more Kafka clusters, which are configured in this section -->
+			<kafkaClusters>
+                <!-- Each Kafka cluster is defined in this section. For each Kafka cluster, identified by a unique name,
+                     a complete 'kafkaCluster' block needs to be configured -->
+				<kafkaCluster name="Site-1-Kafka-Cluster" description="optional description">
+                    <!-- Defines all hosts where Zookeeper is installed that form the cluster -->
+					<nodes>
+						<node ref="hostname-1" />
+					</nodes>
+				</kafkaCluster>
+			</kafkaClusters>
+
+            <!-- Each site may have one ore more Spark clusters, which are configured in this section -->
+			<sparkClusters>
+                <!-- Each Spark cluster is defined in this section. For each Spark cluster, identified by a unique name,
+                     a complete 'sparkCluster' block needs to be configured -->
+				<sparkCluster name="Site-1-Spark-Cluster" description="optional description">
+                    <!-- Defines all hosts where the master nodes are configured to run. Typically this section
+                         will have two nodes configured if the master is configured to run in a failover mode -->
+					<masterNodes>
+						<node ref="hostname" />
+					</masterNodes>
+
+                    <!-- Defines all hosts where the worker nodes are configured to run -->
+					<workerNodes>
+						<node ref="hostname-1" />
+						<node ref="hostname-2" />
+					</workerNodes>
+				</sparkCluster>
+			</sparkClusters>
+		</site>
+	</sites>
+</clusterDef>
