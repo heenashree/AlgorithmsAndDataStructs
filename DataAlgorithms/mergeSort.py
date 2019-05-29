@@ -15,8 +15,17 @@ def mergeSort(arr):
                 arr[k]=R[j]
                 j=j+1
             k=k+1
+        while i < len(L):
+            arr[k] = L[i]
+            i+=1
+            k+=1
+        while j<len(R):
+            arr[k] = R[j]
+            j=j+1
+            k=k+1
 
-        print(arr)
+
+    print(arr)
 
 mergeSort([3,4,1,7,2,6])
 
