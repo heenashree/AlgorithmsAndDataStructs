@@ -27,5 +27,5 @@ def mergeSort(arr):
 
     print(arr)
 
-mergeSort([3,4,1,7,2,6])
+mergeSort([1,2,3,4,6,1,4,10,30,12,10])
 
