@@ -26,7 +26,9 @@ else:
 
 
 #Output of the first if condition is “True” as both list1 and list2 are empty lists.
-#Second if condition shows “False” because two empty lists are at different memory locations. Hence list1 and list2 refer to different objects. We can check it with id() function in python which returns the “identity” of an object.
+#Second if condition shows “False” because two empty lists are at different memory locations.
+# Hence list1 and list2 refer to different objects.
+# We can check it with id() function in python which returns the “identity” of an object.
 #Output of the third if condition is “True” as both list1 and list3 are pointing to the same object.
 
 
