@@ -22,13 +22,16 @@ def myfunc(x, y, z, a):
     print x + y
 nums = [1, 2, 3, 4]
 myfunc(*nums)
+#output 3
 
+#Example 5
 name = 'python'
-print(bool(name))
+#print(bool(name))
 while bool(name) == False:
     print('hi')
+# It prints nothing
 
-
+#Example 6
 if False:
     print('Hi')
 elif True:
@@ -36,12 +39,15 @@ elif True:
 else:
     print('Howdy')
 
+#Output True
 
+#Example 7
 var = 100
 if ( var == 100 ) :
     print "Value of expression is 100"
+#output "Value of expression is 100
 
-
+#Example 8
 values = [1, 2, 1, 3]
 nums = set(values)  #[1,2,3]
 def checkit(num):
@@ -51,13 +57,18 @@ def checkit(num):
         return False
 for i in filter(checkit, values):
      print i
+#output
+# 1,
+# 2,
+# 1,
+# 3
 
-
+#Example 9
 a = range(5)
 print(a)
 b = range(10)
 print(zip(a,b))
-
+#output [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]
 
 def dostuff(param1, *param2):
     print type(param2)
