@@ -22,4 +22,5 @@ z = lambda x : x * y
 print z(6)
 #output is 48
 # Explanation: lambdas are concise functions and thus, result = 6 * 8
-
+import time
+print(time.time())
