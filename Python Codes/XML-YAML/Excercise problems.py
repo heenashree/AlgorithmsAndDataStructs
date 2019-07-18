@@ -29,7 +29,7 @@ name = 'python'
 #print(bool(name))
 while bool(name) == False:
     print('hi')
-# It prints nothing
+# It prints True
 
 #Example 6
 if False:
@@ -70,17 +70,20 @@ b = range(10)
 print(zip(a,b))
 #output [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]
 
+
+#Example 10
 def dostuff(param1, *param2):
     print type(param2)
-    print(param1)
-    print(param2)
+    #print(param1)
+    #print(param2)
 dostuff('apples', 'bananas', 'cherry', 'dates')
-dostuff('apples', ['bananas', 'cherry', 'dates'])
+#output <type 'tuple'>
 
-
+#Example 11
 print "hello" 'world'
+#output helloworld
 
-
+#Example 12
 num1 = 5
 if num1 >= 91:
     num2 = 3
@@ -93,5 +96,8 @@ else:
         print (x,x%7)
 
 
+
+#Example 13
 name = "snow storm"
 name[5] = 'X'
+#output Not allowed
