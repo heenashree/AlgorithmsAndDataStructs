@@ -38,5 +38,11 @@ for x in data:
 #       [7,8,7,8]
 
 #------------------------------------------------#
+word = 'Hello'
+letters1 = list(word)
+letters2 = [ch for ch in word
+            ]
+#Explaination: Both are same method
+
 
 
