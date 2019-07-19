@@ -16,3 +16,18 @@ print(sorted(d.items(), key=lambda x: x[1], reverse=True))
 #Method 3
 import collections
 sorted_dict = collections.OrderedDict(d)
+
+#Method 4
+
+data = [
+    {
+        "name" : "kevin",
+        "age":23
+    },
+    {
+        "name": "cole",
+        "age":30
+    }
+]
+data.sort(key = lambda p:p['age'])
+print(data)
